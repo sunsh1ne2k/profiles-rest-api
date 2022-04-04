@@ -79,12 +79,20 @@ WSGI_APPLICATION = 'profiles_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    "default": {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'mydatabase',
+    },
+
+    "beginner_db": {
+        "ENGINE": "djongo",
+        "CLIENT": {
+            "host": 'mongodb://fjs-test:outsmart-schedule-cogwheel-battalion@ec2-18-140-250-87.ap-southeast-1.compute.amazonaws.com/',
+            "name": 'django-beginner-db',
+            "authMechanism": "SCRAM-SHA-1",
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -128,3 +136,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'profiles_api.UserProfile'
