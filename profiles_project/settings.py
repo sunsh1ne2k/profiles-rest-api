@@ -80,11 +80,6 @@ WSGI_APPLICATION = 'profiles_project.wsgi.application'
 
 DATABASES = {
     "default": {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-    },
-
-    "beginner_db": {
         "ENGINE": "djongo",
         "CLIENT": {
             "host": 'mongodb://fjs-test:outsmart-schedule-cogwheel-battalion@ec2-18-140-250-87.ap-southeast-1.compute.amazonaws.com/',
